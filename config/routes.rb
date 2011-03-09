@@ -1,4 +1,9 @@
 SandlerControlPanel::Application.routes.draw do
+  resources :sessions, :only => [:new, :create, :destroy]
+  
+  match '/login',   :to => 'sessions#new'
+  match '/logout',  :to => 'sessions#destroy'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

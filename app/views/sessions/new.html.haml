@@ -1,0 +1,13 @@
+%h1 Login
+= form_for :session, :url => sessions_path  do |f|
+	.field
+		= f.label :username
+		%br
+		= f.text_field :username
+	.field
+		= f.label :password
+		%br
+		= f.password_field :password
+	.actions
+		= f.submit "Sign in"
+%p Find me in app/views/sessions/new.html.haml
