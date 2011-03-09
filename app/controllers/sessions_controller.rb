@@ -17,6 +17,8 @@ class SessionsController < ApplicationController
                         params[:session][:password])
     if numeric?(user)
       # Log the user in
+      flash.now[:message] = "User logged in successfully"
+      render 'new'
     else
       flash.now[:error] = "Please try again. The username/password combination is not correct."
       # @title = "Sign in"
